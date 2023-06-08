@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+
 import { useQuery } from '@tanstack/react-query';
 
 const hostAPI = process.env.REACT_APP_API_CALL;
@@ -13,9 +13,7 @@ const Post = () => {
 
 	const { isError, isLoading, data } = useQuery({queryKey: ['post'], queryFn: fetchApi, retry: 1});
 
-	// useEffect(() => {
-	// 	fetchApi();
-	// }, []);
+	
 	if (isLoading) {
 		return <h1> loading.... </h1>;
 	}
